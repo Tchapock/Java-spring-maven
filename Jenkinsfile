@@ -12,7 +12,7 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
-        stage('Build Docker Image') {
+        stage('Build Docker Image'){
             steps {
                 sh 'docker build -t my-registry/java-spring-maven:$BUILD_NUMBER .'
             }
