@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Test') {
             steps {
-                sh 'ls'
-                sh 'mvn test'
+                sh 'chmod +x ./mvnw'
+                sh './mvnw test'
             }
         }
         stage('Build'){
             steps {
-                sh 'mvn clean package'
+                sh './mvnw clean package'
             }
         }
         stage('Build Docker Image'){
